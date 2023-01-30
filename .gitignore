@@ -1,0 +1,8 @@
+# Base Directions
+node_modules/
+.cache
+public
+.idea
+
+# Files
+.DS_Store
