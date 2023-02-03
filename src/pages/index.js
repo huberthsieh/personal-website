@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout";
-// import "../sass/style.sass"
+import "../sass/common/_reset.sass"
 
 const theme = {
     black: '#363636',
@@ -22,19 +22,19 @@ const IndexPage = () => {
 
                         <IntroInner>
                             <IntroInfo>
-                                <h2 className="intro__title">
+                                <IntroTitle>
                                     I'm Hubert Hsieh. <br/> A Front-end Developer living in Taichung.
-                                </h2>
+                                </IntroTitle>
 
-                                <p className="intro__text">
+                                <Text className="intro__text">
                                     我是多年平面設計師經驗轉前端工程師，擅長客製化網站與RWD製作，喜歡追求美與有趣的事物，發現新奇的技術會想盡辦法學以實踐， 期許自己能成為美感與技術兼具，最好還能帶點有趣想法的工程師。
-                                </p>
+                                </Text>
 
-                                <div className="social">
+                                <IntroLinks className="social">
                                     <StaticImage src="../images/github.png" alt="Github"/>
                                     <StaticImage src="../images/linkedin.png" alt="LinkedIn"/>
                                     <StaticImage src="../images/codepen.png" alt="Codepen"/>
-                                </div>
+                                </IntroLinks>
                             </IntroInfo>
 
                             <IntroPhoto></IntroPhoto>
@@ -42,19 +42,19 @@ const IndexPage = () => {
                     </Intro>
 
                     <Skill>
-                        <div className="title"># SKILL</div>
+                        <SkillTitle className="title"># SKILL</SkillTitle>
 
-                        <div className="inner flex">
+                        <SkillInner className="inner flex">
                             <p>React / Next / Gatsby.js</p>
                             <p>Vue2 / Vue3.js</p>
                             <p>SpringBoot</p>
                             <p>Html / Pug / Css / Scss / Sass</p>
                             <p>Javascript / jQuery</p>
-                        </div>
+                        </SkillInner>
                     </Skill>
 
                     <Experience>
-                        <div className="title"># Experience</div>
+                        <ExperienceTitle># Experience</ExperienceTitle>
 
                         <div className="inner">
                             <p>海鑫科技 2020 年 8 月 ~ 至今</p>
@@ -64,7 +64,7 @@ const IndexPage = () => {
                     </Experience>
 
                     <Education>
-                        <div className="title"># Education</div>
+                        <EducationTitle># Education</EducationTitle>
 
                         <div className="inner">
                             <p>國立臺中科技大學 2007 - 2011</p>
@@ -73,7 +73,7 @@ const IndexPage = () => {
                     </Education>
 
                     <Project>
-                        <div className="title"># Project</div>
+                        <ProjectTitle># Project</ProjectTitle>
 
                         <div className="inner">
                             <p>Project 01</p>
@@ -90,13 +90,36 @@ export default IndexPage
 
 export const Head = () => <title>Home Page</title>
 
-const Intro = styled.section`
+const Section = styled.section`
+  border: solid 1px red;
+`;
+
+const Title = styled.h2`
+    border: solid 2px black;
+    margin: 0;
+    padding: 20px 35px;
+    width: 100%;
+    font-size: 32px;
+    border-top: solid 2px ${props => props.theme.black};
+    border-bottom: solid 2px ${props => props.theme.black};
+    text-transform: uppercase;
+`;
+
+const Text = styled.p`
+    border: solid 3px darkslategrey;
+    padding: 20px 35px;
+`
+
+const Intro = styled(Section)`
     border: solid 2px red;
 `;
 
-const IntroTitle = styled.h2`
-    border: solid 2px black;
-    padding: 20px 35px;
+const IntroInfo = styled.div`
+    border: solid 2px blue;
+    position: relative;
+`;
+
+const IntroTitle = styled(Title)`
 `;
 
 const IntroInner = styled.div`
@@ -104,10 +127,6 @@ const IntroInner = styled.div`
     width: 100%;
     height: 450px;
     display: flex;
-`;
-
-const IntroInfo = styled.div`
-    border: solid 2px blue;
 `;
 
 const IntroPhoto = styled.div`
@@ -120,18 +139,45 @@ const IntroPhoto = styled.div`
     width: 50%;
 `;
 
-const Skill = styled.section`
-    border: solid 2px orange;
+const IntroLinks = styled.div`
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border: solid 2px purple;
+    padding: 20px 35px;
+    
+    & > div {
+        max-width: 32px;
+        margin-right: 20px;
+    }
+`;
+
+const Skill = styled(Section)`
 `
 
-const Experience = styled.section`
-    border: solid 2px cadetblue;
+const SkillTitle = styled(Title)`
 `;
 
-const Education = styled.section`
-    border: solid 2px blueviolet;
+const SkillInner = styled.div`
+    display: flex;
+`
+
+const Experience = styled(Section)`
 `;
 
-const Project = styled.section`
-    border: solid 2px darkslategrey;
+const ExperienceTitle = styled(Title)`
+`
+
+const Education = styled(Section)`
+`;
+
+const EducationTitle = styled(Title)`
+`;
+
+const Project = styled(Section)`
+`;
+
+const ProjectTitle = styled(Title)`
 `;
