@@ -26,11 +26,11 @@ const IndexPage = () => {
                                     I'm Hubert Hsieh. <br/> A Front-end Developer living in Taichung.
                                 </IntroTitle>
 
-                                <Text className="intro__text">
+                                <Text>
                                     我是多年平面設計師經驗轉前端工程師，擅長客製化網站與RWD製作，喜歡追求美與有趣的事物，發現新奇的技術會想盡辦法學以實踐， 期許自己能成為美感與技術兼具，最好還能帶點有趣想法的工程師。
                                 </Text>
 
-                                <IntroLinks className="social">
+                                <IntroLinks>
                                     <StaticImage src="../images/github.png" alt="Github"/>
                                     <StaticImage src="../images/linkedin.png" alt="LinkedIn"/>
                                     <StaticImage src="../images/codepen.png" alt="Codepen"/>
@@ -42,43 +42,44 @@ const IndexPage = () => {
                     </Intro>
 
                     <Skill>
-                        <SkillTitle className="title"># SKILL</SkillTitle>
+                        <SkillTitle># SKILL</SkillTitle>
 
-                        <SkillInner className="inner flex">
-                            <p>React / Next / Gatsby.js</p>
-                            <p>Vue2 / Vue3.js</p>
-                            <p>SpringBoot</p>
-                            <p>Html / Pug / Css / Scss / Sass</p>
-                            <p>Javascript / jQuery</p>
+                        <SkillInner>
+                            <SkillItem>React / Next / Gatsby.js</SkillItem>
+                            <SkillItem>Vue2 / Vue3.js</SkillItem>
+                            <SkillItem>SpringBoot</SkillItem>
+                            <SkillItem>Html / Pug</SkillItem>
+                            <SkillItem>Css / Scss / Sass</SkillItem>
+                            <SkillItem>Javascript / jQuery</SkillItem>
                         </SkillInner>
                     </Skill>
 
                     <Experience>
                         <ExperienceTitle># Experience</ExperienceTitle>
 
-                        <div className="inner">
-                            <p>海鑫科技 2020 年 8 月 ~ 至今</p>
-                            <p>麗仁科技 2019 年 6 月 ~ 2020 年 6 月</p>
-                            <p>威德數位 2018 年 8 月 ~ 2019 年 5 月</p>
-                        </div>
+                        <ExperienceInner>
+                            <ExperienceItem>海鑫科技 2020 年 8 月 ~ 至今</ExperienceItem>
+                            <ExperienceItem>麗仁科技 2019 年 6 月 ~ 2020 年 6 月</ExperienceItem>
+                            <ExperienceItem>威德數位 2018 年 8 月 ~ 2019 年 5 月</ExperienceItem>
+                        </ExperienceInner>
                     </Experience>
 
                     <Education>
                         <EducationTitle># Education</EducationTitle>
 
-                        <div className="inner">
-                            <p>國立臺中科技大學 2007 - 2011</p>
-                            <p>臺中市立臺中工業高級中等學校 2004 - 2007</p>
-                        </div>
+                        <EducationInner>
+                            <EducationItem>國立臺中科技大學 2007 - 2011</EducationItem>
+                            <EducationItem>臺中市立臺中工業高級中等學校 2004 - 2007</EducationItem>
+                        </EducationInner>
                     </Education>
 
                     <Project>
                         <ProjectTitle># Project</ProjectTitle>
 
-                        <div className="inner">
-                            <p>Project 01</p>
-                            <p>Project 02</p>
-                        </div>
+                        <ProjectInner>
+                            <ProjectItem>形象官網</ProjectItem>
+                            <ProjectItem>形象官網</ProjectItem>
+                        </ProjectInner>
                     </Project>
                 </Layout>
             </main>
@@ -91,11 +92,11 @@ export default IndexPage
 export const Head = () => <title>Home Page</title>
 
 const Section = styled.section`
-  border: solid 1px red;
+    border: solid 1px red;
 `;
 
 const Title = styled.h2`
-    border: solid 2px black;
+    border: solid 2px ${props => props.theme.black};
     margin: 0;
     padding: 20px 35px;
     width: 100%;
@@ -108,7 +109,7 @@ const Title = styled.h2`
 const Text = styled.p`
     border: solid 3px darkslategrey;
     padding: 20px 35px;
-`
+`;
 
 const Intro = styled(Section)`
     border: solid 2px red;
@@ -155,22 +156,49 @@ const IntroLinks = styled.div`
 `;
 
 const Skill = styled(Section)`
-`
+`;
 
 const SkillTitle = styled(Title)`
 `;
 
 const SkillInner = styled.div`
     display: flex;
-`
+    flex-wrap: wrap;
+`;
+
+const SkillItem = styled.div`
+    border: solid 2px red;
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 35px;
+    font-weight: 500;
+`;
 
 const Experience = styled(Section)`
 `;
 
 const ExperienceTitle = styled(Title)`
-`
+`;
+
+const ExperienceInner = styled.div`
+`;
+
+const ExperienceItem = styled.div`
+    padding: 20px 35px;
+    border: solid 1px ${props => props.theme.black};
+`;
 
 const Education = styled(Section)`
+`;
+
+const EducationInner = styled.div`
+`;
+
+const EducationItem = styled.div`
+    padding: 20px 35px;
+    border: solid 1px ${props => props.theme.black};
 `;
 
 const EducationTitle = styled(Title)`
@@ -180,4 +208,12 @@ const Project = styled(Section)`
 `;
 
 const ProjectTitle = styled(Title)`
+`;
+
+const ProjectInner = styled.div`
+`;
+
+const ProjectItem = styled.div`
+    padding: 20px 35px;
+    border: solid 1px ${props => props.theme.black};
 `;
