@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
@@ -12,36 +12,37 @@ const links = [
     {
         id: 2,
         url: '/portfolio',
-        text: 'portfolio'
+        text: 'PORTFOLIO'
     },
     {
         id: 3,
         url: '/blog',
-        text: 'blog'
-    },
-    {
-        id: 4,
-        url: '/portfolio',
-        text: 'CCC'
-    },
-    {
-        id: 5,
-        url: '/blog',
-        text: 'DDD'
-    },
-    {
-        id: 6,
-        url: '/blog',
-        text: 'EEE'
+        text: 'BLOG'
     }
 ]
 
+
+
 const Header = () => {
+
+    // const [index, setIndex] = useState(0);
+
+    // const activeHandler = (i) => {
+    //     console.log('i of isActive', i);
+    //     setIndex(i);
+    // }
+
     return (
         <CustomHeader id="header">
             {
                 links.map(link => (
-                    <Link key={ link.id } to={ link.url }> { link.text } </Link>
+                    <Link
+                        key={ link.id }
+                        to={ link.url }
+                        activeClassName="active"
+                    >
+                        { link.text }
+                    </Link>
                 ))
             }
         </CustomHeader>
@@ -64,16 +65,22 @@ const CustomHeader = styled.header`
         font-weight: 700;
         color: ${props => props.theme.black};
         text-decoration: none;
+        transition: background-color .3s ease-out;
       
-        &:last-child {
-            background-color: ${props => props.theme.purple};
-        }
+        // &:last-child {
+        //     background-color: ${props => props.theme.purple};
+        // }
       
         &:not(:last-child) {
             border-right: none;
         }
       
         &:hover {
+            background-color: ${props => props.theme.purple};
+        }
+        
+        &.active {
+            transition: background-color .3s ease-out;
             background-color: ${props => props.theme.purple};
         }
     }
