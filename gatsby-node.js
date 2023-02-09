@@ -1,41 +1,34 @@
-const path = require("path")
+exports.createPages = ({ actions, graphql }) => {
+    const { createPage } = actions
 
-exports.createPages = async ({actions, graphql, reporter}) => {
-    const {createPage} = actions
+    const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
 
-    const result = await graphql(`
-        {
-            allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] }
-                limit: 1000
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            path
-                        }
-                    }
-                }
+    return graphql(`
+    {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+        edges {
+          node {
+            frontmatter {
+              slug
             }
+          }
         }
-    `)
-
-    if (result.errors) {
-        reporter.panicOnBuild(`Error while running GraphQL query.`)
-        return
+      }
     }
+  `).then(result => {
+        if (result.errors) {
+            return Promise.reject(result.errors)
+        }
 
-    const blogPostTemplate = path.resolve(`src/templates/blog.js`)
-
-    // 創建所有Markdown
-    result.data.allMarkdownRemark.edges.forEach(({node}) => {
-        const path = node.frontmatter.path
-        createPage({
-            path,
-            component: blogPostTemplate,
-            context: {
-                pagePath: path,
-            },
+        return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+            createPage({
+                path: node.frontmatter.slug,
+                component: blogPostTemplate,
+                context: {
+                    // additional data can be passed via context
+                    slug: node.frontmatter.slug,
+                },
+            })
         })
     })
 }

@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout";
+import Blog from "./blog";
 import "../sass/common/_reset.sass"
 
 const theme = {
