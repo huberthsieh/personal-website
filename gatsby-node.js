@@ -1,26 +1,25 @@
-exports.createPages = ({ actions, graphql }) => {
-    const { createPage } = actions
+exports.createPages = ({actions, graphql}) => {
+    const {createPage} = actions
 
     const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
 
     return graphql(`
     {
-      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
-        edges {
-          node {
-            frontmatter {
-              slug
+        allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+            edges {
+                node {
+                    frontmatter {
+                        slug
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  `).then(result => {
+    }`).then(result => {
         if (result.errors) {
             return Promise.reject(result.errors)
         }
 
-        return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        return result.data.allMarkdownRemark.edges.forEach(({node}) => {
             createPage({
                 path: node.frontmatter.slug,
                 component: blogPostTemplate,
