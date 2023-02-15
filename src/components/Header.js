@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
@@ -21,17 +21,7 @@ const links = [
     }
 ]
 
-
-
 const Header = () => {
-
-    // const [index, setIndex] = useState(0);
-
-    // const activeHandler = (i) => {
-    //     console.log('i of isActive', i);
-    //     setIndex(i);
-    // }
-
     return (
         <CustomHeader id="header">
             {
@@ -56,8 +46,7 @@ const CustomHeader = styled.header`
   
     a {
         border: solid 2px ${props => props.theme.black};
-        border-bottom: none;
-        width: calc(100% / 6);
+        width: calc(100% / 3);
         text-align: center;
         text-transform: uppercase;
         padding: 12px 24px;
@@ -67,21 +56,17 @@ const CustomHeader = styled.header`
         text-decoration: none;
         transition: background-color .3s ease-out;
       
-        // &:last-child {
-        //     background-color: ${props => props.theme.purple};
-        // }
-      
         &:not(:last-child) {
             border-right: none;
         }
       
         &:hover {
-            background-color: ${props => props.theme.purple};
+            background-color: ${props => props.theme.green};
         }
         
         &.active {
             transition: background-color .3s ease-out;
-            background-color: ${props => props.theme.purple};
+            background-color: ${props => props.theme.green};
         }
     }
 `

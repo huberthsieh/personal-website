@@ -10,6 +10,7 @@ export default function BlogPostTemplate({ data }) {
             <div className="blog-post">
                 <h1>{frontmatter.title}</h1>
                 <h2>{frontmatter.date}</h2>
+                <h2>{frontmatter.category}</h2>
                 <div
                     className="blog-post-content"
                     dangerouslySetInnerHTML={{ __html: html }}
@@ -19,15 +20,18 @@ export default function BlogPostTemplate({ data }) {
     )
 }
 
+// 模板欄位對應md files
 export const pageQuery = graphql`
     query($slug: String!) {
         markdownRemark(frontmatter: { slug: { eq: $slug } }) {
             html
             frontmatter {
-                date(formatString: "MMMM DD, YYYY")
                 slug
+                date(formatString: "MMMM DD, YYYY")
                 title
+                category
+                test
             }
-        }    
+        }  
     }
 `

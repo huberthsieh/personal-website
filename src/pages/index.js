@@ -3,96 +3,86 @@ import styled, { ThemeProvider } from "styled-components";
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout";
-import Blog from "./blog";
 import "../sass/common/_reset.sass"
-
-const theme = {
-    black: '#363636',
-    white: '#F3F3F3',
-    purple: '#CDB4FF',
-    green: '#B4FFC9'
-}
 
 const IndexPage = () => {
     return (
-        <ThemeProvider theme={theme}>
-            <main>
-                <Layout>
-                    <Intro>
-                        <IntroTitle># ABOUT ME</IntroTitle>
+        <main>
+            <Layout>
+                <Intro>
+                    <IntroTitle># ABOUT ME</IntroTitle>
 
-                        <IntroInner>
-                            <IntroInfo>
-                                <IntroDescription>
-                                    I'm Hubert Hsieh. <br/> A Front-end Developer living in Taichung.
-                                </IntroDescription>
+                    <IntroInner>
+                        <IntroInfo>
+                            <IntroDescription>
+                                I'm Hubert Hsieh. <br/> A Front-end Developer living in Taiwan.
+                            </IntroDescription>
 
-                                <Text>
-                                    我是多年平面設計師經驗轉前端工程師，擅長客製化網站與RWD製作，喜歡追求美與有趣的事物，發現新奇的技術會想盡辦法學以實踐， 期許自己能成為美感與技術兼具，最好還能帶點有趣想法的工程師。
-                                </Text>
+                            <Text>
+                                我是多年平面設計師經驗轉前端工程師，擅長客製化網站與RWD製作，喜歡追求美與有趣的事物，發現新奇的技術會想盡辦法學以實踐， 期許自己能成為美感與技術兼具，最好還能帶點有趣想法的工程師。
+                            </Text>
 
-                                <IntroLinks>
-                                    <LinkItem>
-                                        <StaticImage src="../images/github.png" alt="Github"/>
-                                    </LinkItem>
+                            <IntroLinks>
+                                <LinkItem>
+                                    <StaticImage src="../images/github.png" alt="Github"/>
+                                </LinkItem>
 
-                                    <LinkItem>
-                                        <StaticImage src="../images/linkedin.png" alt="LinkedIn"/>
-                                    </LinkItem>
+                                <LinkItem>
+                                    <StaticImage src="../images/linkedin.png" alt="LinkedIn"/>
+                                </LinkItem>
 
-                                    <LinkItem>
-                                        <StaticImage src="../images/codepen.png" alt="Codepen"/>
-                                    </LinkItem>
-                                </IntroLinks>
-                            </IntroInfo>
+                                <LinkItem>
+                                    <StaticImage src="../images/codepen.png" alt="Codepen"/>
+                                </LinkItem>
+                            </IntroLinks>
+                        </IntroInfo>
 
-                            <IntroPhoto></IntroPhoto>
-                        </IntroInner>
-                    </Intro>
+                        <IntroPhoto></IntroPhoto>
+                    </IntroInner>
+                </Intro>
 
-                    <Skill>
-                        <SkillTitle># SKILL</SkillTitle>
+                <Skill>
+                    <SkillTitle># SKILL</SkillTitle>
 
-                        <SkillInner>
-                            <SkillItem>React / Next / Gatsby.js</SkillItem>
-                            <SkillItem>Vue2 / Vue3.js</SkillItem>
-                            <SkillItem>SpringBoot</SkillItem>
-                            <SkillItem>Html / Pug</SkillItem>
-                            <SkillItem>Css / Scss / Sass</SkillItem>
-                            <SkillItem>Javascript / jQuery</SkillItem>
-                        </SkillInner>
-                    </Skill>
+                    <SkillInner>
+                        <SkillItem>React / Next / Gatsby.js</SkillItem>
+                        <SkillItem>Vue2 / Vue3.js</SkillItem>
+                        <SkillItem>SpringBoot</SkillItem>
+                        <SkillItem>Html / Pug</SkillItem>
+                        <SkillItem>Css / Scss / Sass</SkillItem>
+                        <SkillItem>Javascript / jQuery</SkillItem>
+                    </SkillInner>
+                </Skill>
 
-                    <Experience>
-                        <ExperienceTitle># Experience</ExperienceTitle>
+                <Experience>
+                    <ExperienceTitle># Experience</ExperienceTitle>
 
-                        <ExperienceInner>
-                            <ExperienceItem>海鑫科技 2020 年 8 月 ~ 至今</ExperienceItem>
-                            <ExperienceItem>麗仁科技 2019 年 6 月 ~ 2020 年 6 月</ExperienceItem>
-                            <ExperienceItem>威德數位 2018 年 8 月 ~ 2019 年 5 月</ExperienceItem>
-                        </ExperienceInner>
-                    </Experience>
+                    <ExperienceInner>
+                        <ExperienceItem>海鑫科技 2020 年 8 月 ~ 至今</ExperienceItem>
+                        <ExperienceItem>麗仁科技 2019 年 6 月 ~ 2020 年 6 月</ExperienceItem>
+                        <ExperienceItem>威德數位 2018 年 8 月 ~ 2019 年 5 月</ExperienceItem>
+                    </ExperienceInner>
+                </Experience>
 
-                    <Education>
-                        <EducationTitle># Education</EducationTitle>
+                <Education>
+                    <EducationTitle># Education</EducationTitle>
 
-                        <EducationInner>
-                            <EducationItem>國立臺中科技大學 2007 - 2011</EducationItem>
-                            <EducationItem>臺中市立臺中工業高級中等學校 2004 - 2007</EducationItem>
-                        </EducationInner>
-                    </Education>
+                    <EducationInner>
+                        <EducationItem>國立臺中科技大學 2007 - 2011</EducationItem>
+                        <EducationItem>臺中市立臺中工業高級中等學校 2004 - 2007</EducationItem>
+                    </EducationInner>
+                </Education>
 
-                    <Project>
-                        <ProjectTitle># Project</ProjectTitle>
+                <Project>
+                    <ProjectTitle># Project</ProjectTitle>
 
-                        <ProjectInner>
-                            <ProjectItem>形象官網</ProjectItem>
-                            <ProjectItem>形象官網</ProjectItem>
-                        </ProjectInner>
-                    </Project>
-                </Layout>
-            </main>
-        </ThemeProvider>
+                    <ProjectInner>
+                        <ProjectItem>形象官網</ProjectItem>
+                        <ProjectItem>形象官網</ProjectItem>
+                    </ProjectInner>
+                </Project>
+            </Layout>
+        </main>
     )
 }
 
@@ -125,6 +115,7 @@ const IntroInfo = styled.div`
 `;
 
 const IntroTitle = styled(Title)`
+    border-top: none;
 `;
 
 const IntroDescription = styled(Title)`

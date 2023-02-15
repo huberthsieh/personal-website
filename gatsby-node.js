@@ -1,7 +1,9 @@
-exports.createPages = ({actions, graphql}) => {
-    const {createPage} = actions
+exports.createPages = ({ actions, graphql }) => {
+    console.log('actions', actions);
 
-    const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
+    const {createPage} = actions;
+
+    const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`);
 
     return graphql(`
     {
@@ -25,7 +27,7 @@ exports.createPages = ({actions, graphql}) => {
                 component: blogPostTemplate,
                 context: {
                     // additional data can be passed via context
-                    slug: node.frontmatter.slug,
+                    slug: node.frontmatter.slug
                 },
             })
         })

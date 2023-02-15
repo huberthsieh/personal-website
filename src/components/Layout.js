@@ -1,15 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import Header from './Header';
+
+const theme = {
+    black: '#1c191b',
+    white: '#F3F3F3',
+    purple: '#CDB4FF',
+    green: '#2bb0aa',
+    yellow: '#fef7e5',
+}
 
 const Layout = ({ children }) => {
     return (
-        <Container>
-            <Header />
-            <Wrapper>
-                { children }
-            </Wrapper>
-        </Container>
+        <ThemeProvider theme={theme}>
+            <Container>
+                <Header />
+                <Wrapper>
+                    { children }
+                </Wrapper>
+            </Container>
+        </ThemeProvider>
     );
 };
 

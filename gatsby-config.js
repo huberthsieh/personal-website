@@ -6,7 +6,6 @@ module.exports = {
     plugins: [
         `gatsby-plugin-sass`,
         "gatsby-plugin-styled-components",
-        "gatsby-plugin-image",
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
@@ -16,14 +15,8 @@ module.exports = {
         "gatsby-plugin-mdx",
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                "name": "images",
-                "path": "./src/images/"
-            },
-            __key: "images"
-        },
+        `gatsby-transformer-remark`,
+        "gatsby-plugin-image",
         {
             resolve: 'gatsby-source-filesystem',
             options: {
@@ -32,6 +25,26 @@ module.exports = {
             },
             __key: `content`
         },
-        `gatsby-transformer-remark`
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                "name": `images`,
+                "path": `${__dirname}/src/images`
+            },
+            __key: `images`
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 800,
+                        },
+                    },
+                ],
+            },
+        },
     ]
 };
