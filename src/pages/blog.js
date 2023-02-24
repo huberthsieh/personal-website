@@ -20,8 +20,10 @@ const BlogPage = ({
             <PostsContainer>
                 <PostsList>
                     <PostsInf>
-                        Front End Developer
-                        Hubert Hsieh
+                        <PostsInfInner>
+                            Front End Developer
+                            Hubert Hsieh
+                        </PostsInfInner>
                     </PostsInf>
                     {Posts}
                 </PostsList>
@@ -44,7 +46,6 @@ export const pageQuery = graphql`
                         slug
                         title
                         category
-                        test
                     }
                 }
             }
@@ -56,6 +57,7 @@ const PostsContainer = styled.section`
     overflow: hidden;
     width: 100%;
     display: flex;
+    border: solid green 2px;
     //background-color: ${props => props.theme.yellow}
 `;
 
@@ -68,8 +70,15 @@ const PostsList = styled.div`
 const PostsInf = styled.div`
     width: 25%; 
     font-size: 32px;
-    padding: 16px;
+    padding: 20px;
     text-transform: uppercase;
-    color: ${props => props.theme.black};
-    background-color: ${props => props.theme.green};
+`;
+
+const PostsInfInner = styled.div`
+    border: solid 2px red;
+    width: 100%;
+    height: 100%;
+    background-color: ${props => props.theme.gray};
+    color: #F3F3F3;
+    padding: 12px;
 `;

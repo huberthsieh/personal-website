@@ -4,10 +4,12 @@ import Header from './Header';
 
 const theme = {
     black: '#1c191b',
+    gray: '#3b3b3b',
     white: '#F3F3F3',
     purple: '#CDB4FF',
     green: '#2bb0aa',
     yellow: '#fef7e5',
+    mobile: '768px',
 }
 
 const Layout = ({ children }) => {

@@ -1,7 +1,7 @@
 ---
-slug: "/blog/post-04"
-date: "2023-02-21 19:00"
-title: "測試用"
+slug: "/blog/post-03"
+date: "2023-02-21 15:00"
+title: "Leetcode 刷題"
 category: "Front-End"
 featuredImage: ../images/dog.jpeg
 ---

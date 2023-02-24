@@ -17,7 +17,9 @@ exports.createPages = ({ actions, graphql }) => {
             }
         }
     }`).then(result => {
+        console.log('result ===> ', result);
         if (result.errors) {
+            console.log('result.errors ===> ', result.errors);
             return Promise.reject(result.errors)
         }
 
@@ -32,4 +34,14 @@ exports.createPages = ({ actions, graphql }) => {
             })
         })
     })
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions
+    const typeDefs = `
+    type AuthorJson implements Node {
+      joinedAt: Date
+    }
+  `
+    createTypes(typeDefs)
 }

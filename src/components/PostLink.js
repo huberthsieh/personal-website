@@ -8,6 +8,8 @@ const PostLink = ({ post }) => {
     return (
         <Post>
             <PostInner>
+                <PostImage />
+
                 <PostTitle to={post.frontmatter.slug}>
                     {post.frontmatter.title}
                 </PostTitle>
@@ -18,9 +20,10 @@ const PostLink = ({ post }) => {
                     {post.frontmatter.category}
                 </PostCategory>
 
-                {/*<PostMore to={post.frontmatter.slug}>*/}
-                {/*    More*/}
-                {/*</PostMore>*/}
+                <PostMore>
+                    Read More
+                </PostMore>
+
             </PostInner>
         </Post>
     )
@@ -29,17 +32,18 @@ const PostLink = ({ post }) => {
 const Post = styled.div`
     border: solid 1px ${props => props.theme.black};
     width: 25%;
-    //width: calc(100% / 4 - 16px);
-    //flex: 0 0 calc(100% / 4 - 16px);
-    min-height: 300px;
-    padding: 8px;
+    padding: 20px;
+
+    @media(max-width: ${props => props.theme.mobile}){
+        width: 50%;
+    }
 `;
 
 const PostInner = styled.div`
     height: 100%;
     width: 100%;
     border: solid 2px blue;
-    padding: 8px;
+    padding: 12px;
     position: relative;
 `;
 
@@ -51,7 +55,28 @@ const PostTitle = styled(Link)`
 const PostDate = styled.div``;
 
 const PostCategory = styled.div`
+`;
+
+const PostMore = styled(Link)`
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+    padding-top: 5px; 
+    margin-top: 15px;
+    border-top: solid 1px black;
+`;
+
+const PostImage = styled.div`
     border: solid 2px red;
+    display: block;
+    background-image: url("https://titangene.github.io/images/cover/javascript.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-bottom: 10px;
 `;
 
 export default PostLink;
