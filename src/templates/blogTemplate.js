@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import styled, { ThemeProvider } from 'styled-components';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Layout from "../components/Layout";
 
 export default function BlogPostTemplate({ data }) {
     const { markdownRemark } = data; // data.markdownRemark holds your post data
@@ -14,17 +15,19 @@ export default function BlogPostTemplate({ data }) {
     console.log('featuredImg ===>', featuredImg);
 
     return (
-        <BlogPostContainer className="blog-post-container">
-            <div className="blog-post">
-                <h1>{frontmatter.title}</h1>
-                <h2>{frontmatter.date}</h2>
-                <h2>{frontmatter.category}</h2>
-                <div
-                    className="blog-post-content"
-                    dangerouslySetInnerHTML={{ __html: html }}
-                />
-            </div>
-        </BlogPostContainer>
+        <Layout>
+            <BlogPostContainer className="blog-post-container">
+                <div className="blog-post">
+                    <h1>{frontmatter.title}</h1>
+                    <h2>{frontmatter.date}</h2>
+                    <h2>{frontmatter.category}</h2>
+                    <div
+                        className="blog-post-content"
+                        dangerouslySetInnerHTML={{ __html: html }}
+                    />
+                </div>
+            </BlogPostContainer>
+        </Layout>
     )
 }
 

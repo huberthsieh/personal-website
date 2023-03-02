@@ -24,6 +24,7 @@ const links = [
 const Header = () => {
     return (
         <CustomHeader id="header">
+            <HeaderInf>HUBERT HSIEH</HeaderInf>
             {
                 links.map(link => (
                     <Link
@@ -45,14 +46,14 @@ const CustomHeader = styled.header`
     display: flex;
   
     a {
-        border: solid 2px ${props => props.theme.black};
-        width: calc(100% / 3);
+        border: solid 2px ${props => props.theme.gray};
+        width: calc(100% / 4);
         text-align: center;
         text-transform: uppercase;
         padding: 12px 24px;
         font-size: 18px;
         font-weight: 700;
-        color: ${props => props.theme.black};
+        color: ${props => props.theme.gray};
         text-decoration: none;
         transition: background-color .3s ease-out;
       
@@ -69,6 +70,18 @@ const CustomHeader = styled.header`
             background-color: ${props => props.theme.green};
         }
     }
+`
+
+const HeaderInf = styled.div`
+    border: solid 2px ${props => props.theme.gray};
+    border-right: none;
+    background-color: ${props => props.theme.gray};
+    color: ${props => props.theme.white};
+    width: calc(100% / 4);
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
 `
 
 export default Header;

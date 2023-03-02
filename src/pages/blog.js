@@ -57,14 +57,13 @@ const PostsContainer = styled.section`
     overflow: hidden;
     width: 100%;
     display: flex;
-    border: solid green 2px;
-    //background-color: ${props => props.theme.yellow}
 `;
 
 const PostsList = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding: 20px 0;
 `;
 
 const PostsInf = styled.div`
@@ -75,7 +74,7 @@ const PostsInf = styled.div`
 `;
 
 const PostsInfInner = styled.div`
-    border: solid 2px red;
+    //border: solid 2px red;
     width: 100%;
     height: 100%;
     background-color: ${props => props.theme.gray};
