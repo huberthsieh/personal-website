@@ -24,7 +24,7 @@ const links = [
 const Header = () => {
     return (
         <CustomHeader id="header">
-            <HeaderInf>HUBERT HSIEH</HeaderInf>
+            <HeaderInf>HUBERT</HeaderInf>
             {
                 links.map(link => (
                     <Link

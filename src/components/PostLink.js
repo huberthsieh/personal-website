@@ -42,7 +42,7 @@ const Post = styled.div`
 const PostInner = styled.div`
     height: 100%;
     width: 100%;
-    //border: solid 2px blue;
+    border: solid 2px ${props => props.theme.gray};
     //border-top: solid 8px ${props => props.theme.black};
     //padding: 0 12px 12px;
     position: relative;
@@ -52,11 +52,15 @@ const PostTitle = styled(Link)`
     color: ${props => props.theme.gray};
     font-size: 20px;
     font-weight: 700;
+    padding-left: 20px;
 `;
 
-const PostDate = styled.div``;
+const PostDate = styled.div`
+    padding-left: 20px;
+`;
 
 const PostCategory = styled.div`
+    padding-left: 20px;
 `;
 
 const PostMore = styled(Link)`
@@ -64,9 +68,9 @@ const PostMore = styled(Link)`
     font-weight: 700;
     color: ${props => props.theme.gray};
     display: block;
-    padding-top: 5px; 
     margin-top: 15px;
     border-top: solid 1px ${props => props.theme.gray};
+    padding: 10px 0 10px 20px;
 `;
 
 const PostImage = styled.div`

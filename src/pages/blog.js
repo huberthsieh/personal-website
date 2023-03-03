@@ -63,7 +63,7 @@ const PostsList = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 20px 0;
+    padding: 20px;
 `;
 
 const PostsInf = styled.div`
@@ -79,5 +79,5 @@ const PostsInfInner = styled.div`
     height: 100%;
     background-color: ${props => props.theme.gray};
     color: #F3F3F3;
-    padding: 12px;
+    padding: 24px;
 `;
