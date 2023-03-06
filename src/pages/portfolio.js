@@ -58,7 +58,7 @@ const Portfolio = () => {
                         <ExperienceTitle># Experience</ExperienceTitle>
 
                         <ExperienceInner>
-                            <ExperienceItem>海鑫科技 2020 年 8 月 ~ 至今</ExperienceItem>
+                            <ExperienceItem>海鑫科技 2020 年 8 月 ~ 2023 年 3 月</ExperienceItem>
                             <ExperienceItem>麗仁科技 2019 年 6 月 ~ 2020 年 6 月</ExperienceItem>
                             <ExperienceItem>威德數位 2018 年 8 月 ~ 2019 年 5 月</ExperienceItem>
                         </ExperienceInner>
@@ -91,7 +91,7 @@ export default Portfolio;
 
 const PortfolioContainer = styled.div`
     //background-color: ${props => props.theme.yellow}
-`
+`;
 
 const Section = styled.section`
 `;

@@ -12,6 +12,8 @@ const IndexPage = () => {
                 <HomeContainer>
                     <Title># Hello, I am Hubert.</Title>
                     <IntroPhoto></IntroPhoto>
+                    <Title>Official Website</Title>
+                    <Contact>123</Contact>
                 </HomeContainer>
             </Layout>
         </main>
@@ -31,7 +33,6 @@ const Title = styled.h2`
     padding: 20px 35px;
     width: 100%;
     font-size: 32px;
-    //border-top: solid 2px ${props => props.theme.black};
     border-bottom: solid 2px ${props => props.theme.black};
     text-transform: uppercase;
 `;
@@ -44,5 +45,14 @@ const IntroPhoto = styled.div`
     width: 100%;
     height: 0;
     padding-bottom: 41.25%;
+`;
+
+const Contact = styled.div`
+    border: solid 2px red;
+    margin: 0;
+    padding: 20px 35px;
+    width: 100%;
+    font-size: 32px;
+    text-transform: uppercase;
 `;
 
