@@ -1,8 +1,9 @@
 ---
 slug: "/blog/post-01"
-date: "2023-02-14"
-title: "JavsScript 事件循環？"
-category: "Front-End"
+date: "2023-03-01"
+title: "localstorage是什麼"
+category: "Javascript"
+author: "HubertHsieh"
 featuredImage: ../images/dog.jpeg
 ---
 

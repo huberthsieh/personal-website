@@ -3,13 +3,14 @@ import styled, { ThemeProvider } from 'styled-components';
 import Header from './Header';
 
 const theme = {
-    black: '#1c191b',
-    gray: '#3b3b3b',
+    black: '#1C191B',
+    gray: '#3B3B3B',
     white: '#F3F3F3',
     purple: '#CDB4FF',
-    green: '#2bb0aa',
-    yellow: '#fef7e5',
-    mobile: '768px',
+    green: '#2BB0AA',
+    yellow: '#FEF7E5',
+    red: '#E46765',
+    mobile: '768px'
 }
 
 const Layout = ({ children }) => {

@@ -11,13 +11,13 @@ const links = [
     },
     {
         id: 2,
-        url: '/portfolio',
-        text: 'PORTFOLIO'
+        url: '/blog',
+        text: 'Blog'
     },
     {
         id: 3,
-        url: '/blog',
-        text: 'BLOG'
+        url: '/contact-me',
+        text: 'Contact'
     }
 ]
 

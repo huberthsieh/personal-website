@@ -10,18 +10,24 @@ const PostLink = ({ post }) => {
             <PostInner>
                 <PostImage />
 
-                <PostTitle to={post.frontmatter.slug}>
-                    {post.frontmatter.title}
-                </PostTitle>
-                <PostDate>
-                    {post.frontmatter.date}
-                </PostDate>
                 <PostCategory>
                     {post.frontmatter.category}
                 </PostCategory>
 
-                <PostMore>
-                    Read More
+                <PostTitle to={post.frontmatter.slug}>
+                    {post.frontmatter.title}
+                </PostTitle>
+
+                <PostDate>
+                    {post.frontmatter.date}
+                </PostDate>
+
+                <PostDate>
+                    by {post.frontmatter.author}
+                </PostDate>
+
+                <PostMore to={post.frontmatter.slug}>
+                    閱讀更多
                 </PostMore>
 
             </PostInner>
@@ -50,9 +56,10 @@ const PostInner = styled.div`
 
 const PostTitle = styled(Link)`
     color: ${props => props.theme.gray};
-    font-size: 20px;
+    display: block;
+    font-size: 24px;
     font-weight: 700;
-    padding-left: 20px;
+    padding: 0 20px;
 `;
 
 const PostDate = styled.div`
