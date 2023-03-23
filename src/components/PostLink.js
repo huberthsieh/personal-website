@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const PostLink = ({ post }) => {
-    console.log('post list', post)
+    const featuredImg = getImage(post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData);
 
     return (
         <Post>
             <PostInner>
-                <PostImage />
+                <PostImage>
+                    <GatsbyImage image={featuredImg} alt="image"/>
+                </PostImage>
 
                 <PostCategory>
                     {post.frontmatter.category}
@@ -81,16 +84,7 @@ const PostMore = styled(Link)`
 `;
 
 const PostImage = styled.div`
-    //border: solid 2px red;
-    display: block;
-    background-image: url("https://titangene.github.io/images/cover/javascript.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    margin-bottom: 10px;
+    border: solid 2px red;
 `;
 
 export default PostLink;

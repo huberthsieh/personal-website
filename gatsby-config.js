@@ -12,18 +12,15 @@ module.exports = {
                 "icon": "src/images/icon.png"
             }
         },
-        "gatsby-plugin-mdx",
+        `gatsby-transformer-remark`,
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
-        `gatsby-transformer-remark`,
-        "gatsby-plugin-image",
+        `gatsby-plugin-image`,
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve: `gatsby-source-filesystem`,
             options: {
-                "name": `content`,
-                "path": `${__dirname}/src/content`
+                path: `${__dirname}/src/content`,
             },
-            __key: `content`
         },
         {
             resolve: 'gatsby-source-filesystem',

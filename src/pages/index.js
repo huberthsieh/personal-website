@@ -1,10 +1,9 @@
 import * as React from "react"
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout";
 import "../sass/common/_reset.sass"
-import {Link} from "gatsby";
 
 const IndexPage = () => {
     return (

@@ -1,18 +1,14 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import styled from 'styled-components';
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function BlogPostTemplate({ data }) {
     const { markdownRemark } = data; // data.markdownRemark holds your post data
     const { frontmatter, html } = markdownRemark;
 
-    const post = markdownRemark
-    const featuredImg = getImage(post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
-
-    console.log('frontmatter ===>', frontmatter);
-    console.log('featuredImg ===>', featuredImg);
+    const featuredImg = getImage(frontmatter.featuredImage?.childImageSharp?.gatsbyImageData);
 
     return (
         <Layout>
@@ -22,6 +18,7 @@ export default function BlogPostTemplate({ data }) {
                     <h2>{frontmatter.date}</h2>
                     <h2>{frontmatter.category}</h2>
                     <h2>{frontmatter.author}</h2>
+                    <GatsbyImage image={featuredImg} alt="image"/>
                     <div
                         className="blog-post-content"
                         dangerouslySetInnerHTML={{ __html: html }}
@@ -49,6 +46,11 @@ export const pageQuery = graphql`
                 title
                 category
                 author
+                featuredImage {
+                    childImageSharp {
+                        gatsbyImageData(width: 800)
+                    }
+                }
             }
         }  
     }

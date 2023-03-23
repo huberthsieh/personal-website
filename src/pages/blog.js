@@ -47,6 +47,11 @@ export const pageQuery = graphql`
                         title
                         category
                         author
+                        featuredImage {
+                            childImageSharp {
+                                gatsbyImageData(width: 800)
+                            }
+                        }
                     }
                 }
             }

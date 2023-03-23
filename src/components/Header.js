@@ -16,7 +16,7 @@ const links = [
     },
     {
         id: 3,
-        url: '/contact-me',
+        url: '/contact',
         text: 'Contact'
     }
 ]

@@ -15,11 +15,11 @@ const ContactMe = () => {
                         <FormText>
                             <FormTitle># 和我聯繫</FormTitle>
                             <Text>
-                                不管是任何問題，或是有工作上的邀約，都歡迎和我聯繫。
+                                工作邀約或是任何問題，歡迎和我聯繫。
                             </Text>
                         </FormText>
 
-                        <form method="post" action="javascript:void(0);">
+                        <form method="post" action="">
                             <label>
                                 <h4>姓名</h4>
                                 <input type="text" name="name" id="name" placeholder="姓名"/>
@@ -151,10 +151,4 @@ const Text = styled.p`
     padding: 20px 35px;
     max-width: 480px;
     width: 100%;
-`;
-
-const SocialLink = styled.div`
-    display: block;
-    width: 100%;
-    border: solid 2px red;
 `;
