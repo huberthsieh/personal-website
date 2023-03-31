@@ -17,7 +17,6 @@ export default function BlogPostTemplate({ data }) {
                     <h1>{frontmatter.title}</h1>
                     <h2>{frontmatter.date}</h2>
                     <h2>{frontmatter.category}</h2>
-                    <h2>{frontmatter.author}</h2>
                     <GatsbyImage image={featuredImg} alt="image"/>
                     <div
                         className="blog-post-content"
@@ -45,7 +44,6 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 title
                 category
-                author
                 featuredImage {
                     childImageSharp {
                         gatsbyImageData(width: 800)

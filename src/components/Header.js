@@ -13,11 +13,6 @@ const links = [
         id: 2,
         url: '/blog',
         text: 'Blog'
-    },
-    {
-        id: 3,
-        url: '/contact',
-        text: 'Contact'
     }
 ]
 
@@ -47,7 +42,7 @@ const CustomHeader = styled.header`
   
     a {
         border: solid 2px ${props => props.theme.gray};
-        width: calc(100% / 4);
+        width: calc(100% / 3);
         text-align: center;
         text-transform: uppercase;
         padding: 12px 24px;
@@ -77,7 +72,7 @@ const HeaderInf = styled.div`
     border-right: none;
     background-color: ${props => props.theme.gray};
     color: ${props => props.theme.white};
-    width: calc(100% / 4);
+    width: calc(100% / 3);
     padding: 12px 24px;
     font-size: 18px;
     font-weight: 700;

@@ -9,25 +9,25 @@ const PostLink = ({ post }) => {
     return (
         <Post>
             <PostInner>
+
                 <PostImage>
                     <GatsbyImage image={featuredImg} alt="image"/>
                 </PostImage>
 
-                <PostCategory>
-                    {post.frontmatter.category}
-                </PostCategory>
+                <PostContent>
+                    <PostCategory>
+                        {post.frontmatter.category}
+                    </PostCategory>
 
-                <PostTitle to={post.frontmatter.slug}>
-                    {post.frontmatter.title}
-                </PostTitle>
+                    <PostTitle to={post.frontmatter.slug}>
+                        {post.frontmatter.title}
+                    </PostTitle>
 
-                <PostDate>
-                    {post.frontmatter.date}
-                </PostDate>
+                    <PostDate>
+                        {post.frontmatter.date}
+                    </PostDate>
 
-                <PostDate>
-                    by {post.frontmatter.author}
-                </PostDate>
+                </PostContent>
 
                 <PostMore to={post.frontmatter.slug}>
                     閱讀更多
@@ -39,9 +39,9 @@ const PostLink = ({ post }) => {
 }
 
 const Post = styled.div`
-    //border: solid 1px ${props => props.theme.black};
-    width: 25%;
-    padding: 20px;
+    // border: solid 1px ${props => props.theme.black};
+    width: calc(100% / 3);
+    padding: 10px;
 
     @media(max-width: ${props => props.theme.mobile}){
         width: 50%;
@@ -55,6 +55,10 @@ const PostInner = styled.div`
     //border-top: solid 8px ${props => props.theme.black};
     //padding: 0 12px 12px;
     position: relative;
+    padding-bottom: 48px;
+`;
+
+const PostContent = styled.div`
 `;
 
 const PostTitle = styled(Link)`
@@ -62,15 +66,20 @@ const PostTitle = styled(Link)`
     display: block;
     font-size: 24px;
     font-weight: 700;
-    padding: 0 20px;
+    padding: 5px 20px;
 `;
 
 const PostDate = styled.div`
     padding-left: 20px;
+    padding-bottom: 5px;
 `;
 
 const PostCategory = styled.div`
-    padding-left: 20px;
+    padding: 10px 20px;
+    background-color: ${props => props.theme.gray}; 
+    color: ${props => props.theme.white};
+    letter-spacing: 1.2px;
+    font-weight: 700;
 `;
 
 const PostMore = styled(Link)`
@@ -81,10 +90,17 @@ const PostMore = styled(Link)`
     margin-top: 15px;
     border-top: solid 1px ${props => props.theme.gray};
     padding: 10px 0 10px 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 `;
 
 const PostImage = styled.div`
-    border: solid 2px red;
+    & > div {
+        width: 100%;
+        aspect-ratio: 2 / 1;
+    }
 `;
 
 export default PostLink;

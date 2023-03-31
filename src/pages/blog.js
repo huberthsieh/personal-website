@@ -46,7 +46,6 @@ export const pageQuery = graphql`
                         slug
                         title
                         category
-                        author
                         featuredImage {
                             childImageSharp {
                                 gatsbyImageData(width: 800)
@@ -69,21 +68,20 @@ const PostsList = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
 `;
 
 const PostsInf = styled.div`
-    width: 25%; 
-    font-size: 32px;
-    padding: 20px;
+    width: calc(100% / 3); 
+    font-size: 40px;
+    padding: 10px;
     text-transform: uppercase;
 `;
 
 const PostsInfInner = styled.div`
-    //border: solid 2px red;
     width: 100%;
     height: 100%;
     background-color: ${props => props.theme.gray};
-    color: #F3F3F3;
+    color: ${props => props.theme.white};
     padding: 24px;
 `;
