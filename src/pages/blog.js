@@ -10,7 +10,7 @@ const BlogPage = ({
     }
 }) => {
     const Posts = edges
-        .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+        .filter(edge => !!edge.node.frontmatter.date)
         .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
     console.log('edges', edges);

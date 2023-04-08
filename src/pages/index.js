@@ -59,9 +59,9 @@ const IndexPage = () => {
                         <ExperienceTitle># Experience</ExperienceTitle>
 
                         <ExperienceInner>
-                            <ExperienceItem>海鑫科技 2020 年 8 月 ~ 2023 年 3 月</ExperienceItem>
-                            <ExperienceItem>麗仁科技 2019 年 6 月 ~ 2020 年 6 月</ExperienceItem>
-                            <ExperienceItem>威德數位 2018 年 8 月 ~ 2019 年 5 月</ExperienceItem>
+                            <ExperienceItem>海鑫科技 - 形象網站製作 2020.08 ~ 2023.03</ExperienceItem>
+                            <ExperienceItem>麗仁科技 - 平台開發維護 2019.06 ~ 2020.06</ExperienceItem>
+                            <ExperienceItem>威德數位 - 形象網站製作 2018.08 ~ 2019.05</ExperienceItem>
                         </ExperienceInner>
                     </Experience>
 
@@ -69,8 +69,8 @@ const IndexPage = () => {
                         <EducationTitle># Education</EducationTitle>
 
                         <EducationInner>
-                            <EducationItem>國立臺中科技大學 2007 - 2011</EducationItem>
-                            <EducationItem>臺中市立臺中工業高級中等學校 2004 - 2007</EducationItem>
+                            <EducationItem>國立臺中科技大學 - 多媒體設計系 2007 ~ 2011</EducationItem>
+                            <EducationItem>臺中市立臺中工業高級中等學校 - 資訊科 2004 ~ 2007</EducationItem>
                         </EducationInner>
                     </Education>
 
@@ -78,8 +78,18 @@ const IndexPage = () => {
                         <ProjectTitle># Project</ProjectTitle>
 
                         <ProjectInner>
-                            <ProjectItem>形象官網</ProjectItem>
-                            <ProjectItem>形象官網</ProjectItem>
+                            <ProjectItem>
+                                <ProjectLink href="https://github.com/huberthsieh/official-website" target="_blank">
+                                    形象官網模板
+                                </ProjectLink>
+                                <ProjectImage />
+                            </ProjectItem>
+                            <ProjectItem>
+                                <ProjectLink href="https://github.com/huberthsieh/just-chat" target="_blank">
+                                    簡易聊天室
+                                </ProjectLink>
+                                <ProjectImage />
+                            </ProjectItem>
                         </ProjectInner>
                     </Project>
                 </PortfolioContainer>
@@ -260,9 +270,36 @@ const ProjectInner = styled.div`
 const ProjectItem = styled.div`
     padding: 20px 35px;
     border-bottom: solid 2px ${props => props.theme.black};
+    position: relative;
     
     &:last-child {
         border-bottom: none;
     }
+  
+    &:hover {
+        div:last-child {
+            opacity: 1;
+        }
+    }
+`;
+
+const ProjectLink = styled.a`
+
+`
+
+const ProjectImage = styled.div`
+    background-image: url("https://i.pinimg.com/originals/f5/2e/8a/f52e8aae045edec105ba3ce139ac8db5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-left: solid 2px ${props => props.theme.gray};
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .3s;
 `;
 
