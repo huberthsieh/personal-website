@@ -21,19 +21,22 @@ const IndexPage = () => {
 
                                 <Text>
                                     我是多年平面設計師經驗轉前端工程師，擅長客製化網站與RWD製作，喜歡追求美與有趣的事物，發現新奇的技術會想盡辦法學以實踐， 期許自己能成為美感與技術兼具，最好還能帶點有趣想法的工程師。
+                                    <br/>
+                                    <br/>
+                                    <span>Be the senior you needed when you were a junior.</span>
                                 </Text>
 
                                 <IntroLinks>
                                     <LinkItem href="https://github.com/huberthsieh" target="_blank">
-                                        <StaticImage src="../images/github.png" alt="Github"/>
+                                        <StaticImage src="../images/github.png" alt="Github" />
                                     </LinkItem>
 
                                     <LinkItem href="https://www.linkedin.com/in/huberthsieh/" target="_blank">
-                                        <StaticImage src="../images/linkedin.png" alt="LinkedIn"/>
+                                        <StaticImage src="../images/linkedin.png" alt="LinkedIn" />
                                     </LinkItem>
 
                                     <LinkItem href="https://codepen.io/Yantsharn" target="_blank">
-                                        <StaticImage src="../images/codepen.png" alt="Codepen"/>
+                                        <StaticImage src="../images/codepen.png" alt="Codepen" />
                                     </LinkItem>
                                 </IntroLinks>
                             </IntroInfo>
@@ -61,7 +64,7 @@ const IndexPage = () => {
                         <ExperienceInner>
                             <ExperienceItem>海鑫科技 - 形象網站製作 2020.08 ~ 2023.03</ExperienceItem>
                             <ExperienceItem>麗仁科技 - 平台開發維護 2019.06 ~ 2020.06</ExperienceItem>
-                            <ExperienceItem>威德數位 - 形象網站製作 2018.08 ~ 2019.05</ExperienceItem>
+                            <ExperienceItem>威德數位 - 接案網站製作 2018.08 ~ 2019.05</ExperienceItem>
                         </ExperienceInner>
                     </Experience>
 
@@ -121,6 +124,11 @@ const Title = styled.h2`
 
 const Text = styled.p`
     padding: 20px 35px;
+
+    span {
+        color: ${props => props.theme.green};
+        font-weight: bold;
+    }
 `;
 
 const Intro = styled(Section)`
