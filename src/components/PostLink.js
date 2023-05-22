@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { devices } from "../config/device";
 
 const PostLink = ({ post }) => {
     const featuredImg = getImage(post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData);
@@ -43,8 +44,9 @@ const Post = styled.div`
     width: calc(100% / 3);
     padding: 10px;
 
-    @media(max-width: ${props => props.theme.mobile}){
-        width: 50%;
+    @media ${devices.mobile} {
+        width: 100%;
+        padding-top: 0;
     }
 `;
 
@@ -52,8 +54,6 @@ const PostInner = styled.div`
     height: 100%;
     width: 100%;
     border: solid 2px ${props => props.theme.gray};
-    //border-top: solid 8px ${props => props.theme.black};
-    //padding: 0 12px 12px;
     position: relative;
     padding-bottom: 48px;
 `;
@@ -64,7 +64,7 @@ const PostContent = styled.div`
 const PostTitle = styled(Link)`
     color: ${props => props.theme.gray};
     display: block;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     padding: 5px 20px;
 `;
@@ -72,6 +72,7 @@ const PostTitle = styled(Link)`
 const PostDate = styled.div`
     padding-left: 20px;
     padding-bottom: 5px;
+    color: ${props => props.theme.green};;
 `;
 
 const PostCategory = styled.div`

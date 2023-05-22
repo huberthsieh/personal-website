@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {graphql} from "gatsby";
 import PostLink from "../components/PostLink";
 import Layout from "../components/Layout";
+import { devices } from "../config/device";
 
 const BlogPage = ({
     data: {
@@ -69,6 +70,11 @@ const PostsList = styled.div`
     flex-wrap: wrap;
     width: 100%;
     padding: 10px;
+
+    @media ${devices.mobile} {
+        padding: 0;
+    }
+    
 `;
 
 const PostsInf = styled.div`
@@ -76,6 +82,10 @@ const PostsInf = styled.div`
     font-size: 40px;
     padding: 10px;
     text-transform: uppercase;
+  
+    @media ${devices.mobile} {
+        width: 100%;
+    }
 `;
 
 const PostsInfInner = styled.div`
@@ -84,4 +94,9 @@ const PostsInfInner = styled.div`
     background-color: ${props => props.theme.gray};
     color: ${props => props.theme.white};
     padding: 24px;
+    font-weight: 700;
+  
+    @media ${devices.mobile} {
+        padding: 16px;
+    }
 `;

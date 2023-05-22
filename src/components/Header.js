@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import {devices} from "../config/device";
 
 const links = [
     {
@@ -77,6 +78,10 @@ const HeaderInf = styled.div`
     font-size: 18px;
     font-weight: 700;
     text-align: center;
+
+    @media ${devices.mobile} {
+        width: 50%;
+    }
 `
 
 export default Header;
