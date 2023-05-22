@@ -1,7 +1,8 @@
 module.exports = {
     siteMetadata: {
         title: `my-personal-website`,
-        siteUrl: `https://www.yourdomain.tld`
+        siteUrl: `https://hubert-website.vercel.app/`,
+        image: `/gatsby-icon.png`
     },
     plugins: [
         `gatsby-plugin-sass`,
