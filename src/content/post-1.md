@@ -1,7 +1,7 @@
 ---
 slug: "/blog/post-01"
 date: "2023-05-15"
-title: "前端知識 - Cookie、SessionStorage、LocalStorage"
+title: "前端知識 - Cookie、SessionStorage、LocalStorage。"
 category: "JavaScript"
 featuredImage: ../images/blog-storage.jpg
 ---

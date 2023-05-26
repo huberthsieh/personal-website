@@ -14,7 +14,8 @@ const theme = {
     green: '#2BB0AA',
     greenLight: '#2bb0aa5c',
     yellow: '#FEF7E5',
-    red: '#E46765'
+    red: '#E46765',
+    blue: '#3844c7'
 };
 
 const Layout = ({ children }) => {

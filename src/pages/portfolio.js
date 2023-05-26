@@ -65,6 +65,7 @@ const Portfolio = () => {
                     <ExperienceTitle># Experience</ExperienceTitle>
 
                     <ExperienceInner>
+                        <ExperienceItem>Freelancer - 形象網站製作 2023.03 ~ 至今</ExperienceItem>
                         <ExperienceItem>海鑫科技 - 形象網站製作 2020.08 ~ 2023.03</ExperienceItem>
                         <ExperienceItem>麗仁科技 - 平台開發維護 2019.06 ~ 2020.06</ExperienceItem>
                         <ExperienceItem>威德數位 - 接案網站製作 2018.08 ~ 2019.05</ExperienceItem>

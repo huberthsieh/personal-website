@@ -1,7 +1,7 @@
 ---
 slug: "/blog/post-04"
 date: "2023-05-18"
-title: "前端知識 - React的生命週期：一元復始，萬象更新"
+title: "前端知識 - React的生命週期：一元復始，萬象更新。"
 category: "JavaScript"
 featuredImage: ../images/blog-react.jpg
 ---
@@ -19,6 +19,8 @@ featuredImage: ../images/blog-react.jpg
 
 ```javascript
 class Message extends Component {  
+    
+    // 建構子 Constructor ，初始化初始狀態
     constructor(props) {
         super(props);
         this.state = {

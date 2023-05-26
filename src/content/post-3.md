@@ -1,7 +1,7 @@
 ---
 slug: "/blog/post-03"
 date: "2023-05-17"
-title: "後端知識 - 前端工程師的Spring Boot成長日記 "
+title: "後端知識 - 前端工程師的Spring Boot成長日記。"
 category: "SpringBoot"
 featuredImage: ../images/blog-spring.jpg
 ---

@@ -56,7 +56,8 @@ const BlogPostContainer = styled.div`
         code {
             font-weight: 500;
             font-family: Noto Sans TC;
-            font-size: 1.125rem;
+            font-size: 1rem;
+            color: ${props => props.theme.gray};
         }
       
         &:has(.language-javascript) {
@@ -74,9 +75,10 @@ const BlogPostContainer = styled.div`
     }
   
     h4 {
-        font-size: 1.2rem;
-        font-weight: 500;
-        margin: 20px 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 10px 0;
+        color: ${props => props.theme.gray};
     }
 
     ul, ol {
@@ -93,6 +95,29 @@ const BlogPostContainer = styled.div`
     p {
         margin: 20px 0;
         font-size: 1.125rem;
+      
+        a {
+            color: ${props => props.theme.blue};
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 2px;
+          
+            &:before {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: ${props => props.theme.blue};
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                opacity: 0;
+                transition: opacity .2s;
+            }
+            
+            &:hover:before {
+                opacity: 1;
+            }
+        }
     }
   
     strong {
