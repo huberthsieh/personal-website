@@ -62,5 +62,19 @@ module.exports = {
                 ],
             },
         },
+        {
+            resolve: 'gatsby-transformer-remark',
+            options: {
+                plugins: [
+                    {
+                        resolve: 'gatsby-remark-prismjs',
+                        options: {
+                            // 自定義 Prism.js 的配置（可選）
+                            // 更多配置參數可以參考 Prism.js 的文檔
+                        },
+                    },
+                ],
+            },
+        },
     ]
 };

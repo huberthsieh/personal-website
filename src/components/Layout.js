@@ -7,12 +7,12 @@ import {devices} from "../config/device";
 const theme = {
     black: '#1C191B',
     gray: '#3B3B3B',
-    grayLight: '#cecece',
+    grayLight: '#f1f1f1',
     white: '#F3F3F3',
     purple: '#c9b7f5',
     purpleDark: '#bca2f1',
     green: '#2BB0AA',
-    greenLight: '#2bb0aa5c',
+    greenLight: 'rgba(213,245,233,0.36)',
     yellow: '#FEF7E5',
     red: '#E46765',
     blue: '#3844c7'

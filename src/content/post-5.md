@@ -156,15 +156,14 @@ console.log(sumWithInitial);
 [參考MDN - Array.prototype.reduce()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 #### 型別的運算比較，比如經典的 1<2<3 以及 3>2>1
 ```javascript
-console.log以下狀況的結果，這邊牽扯 JavaScript 的各種運算子在運算時，如果是不同型別會做甚麼處理以及回傳什麼結果。
+// console.log以下狀況的結果，這邊牽扯 JavaScript 的各種運算子在運算時，如果是不同型別會做甚麼處理以及回傳什麼結果。
 
 - 1<2<3： 可以先判斷 1<2 是 true，重點就變成 true<3 會回傳什麼呢?
 - 3>2>1： 可以先判斷 3>2 是 true，重點就變成 true>1 會回傳什麼呢?
 - true+'xyz'： true 是 布林值，那重點就變成 布林值+字串會變成什麼呢?
 
-上述幾點就需要先了解 JavaScript 的強制轉型別的概念(很雞婆？)   
-    
-- {key: "value"}： 理論上會把物件印出來沒錯，只是很有可能一般實務上物件console出來的值未必是如自己所想的那樣
+// 上述幾點就需要先了解 JavaScript 的強制轉型別的概念(很雞婆？)   
+- {key: "value"}： 理論上會把物件印出來沒錯，只是很有可能一般實務上物件console出來的值未必是如自己所想的那樣！
 ```
 [物件的console-bug，詳情可以看看Huli大大的文章](https://blog.huli.tw/2020/03/23/console-log-bug/)
 

@@ -43,7 +43,7 @@ const BlogPostContainer = styled.div`
     padding: 40px;
   
     pre {
-        background-color: ${props => props.theme.greenLight};
+        background-color: ${props => props.theme.grayLight};
         border-radius: 4px;
         padding: 20px;
         overflow: hidden;
@@ -57,7 +57,8 @@ const BlogPostContainer = styled.div`
             font-weight: 500;
             font-family: Noto Sans TC;
             font-size: 1rem;
-            color: ${props => props.theme.gray};
+            color: ${props => props.theme.black};
+            text-shadow: none;
         }
       
         &:has(.language-javascript) {
