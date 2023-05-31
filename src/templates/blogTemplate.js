@@ -78,7 +78,7 @@ const BlogPostContainer = styled.div`
     h4 {
         font-size: 1.25rem;
         font-weight: 700;
-        margin: 10px 0;
+        margin: 20px 0 10px;
         color: ${props => props.theme.gray};
     }
 
@@ -94,7 +94,8 @@ const BlogPostContainer = styled.div`
     }
     
     p {
-        margin: 20px 0;
+        margin: 0;
+        padding: 10px 0 15px;
         font-size: 1.125rem;
       
         a {
